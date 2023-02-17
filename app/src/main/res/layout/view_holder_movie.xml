@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="movieData"
+            type="com.example.samplemvvmjava.model.MovieData" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="128dp">
+
+        <ImageView
+            android:layout_marginStart="16dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:visibility="gone"
+            android:id="@+id/iv_movie"/>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_marginHorizontal="16dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:textSize="20sp"
+                android:text="@{movieData.movieNm}"
+                tools:text="적과의 동침"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:text="@{movieData.mainDirector}"
+                tools:text="김인식 감독"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="@{movieData.mainCompany}"
+                tools:text="주식회사 필름"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:maxLines="1"
+                android:textStyle="normal"
+                android:textSize="12sp"
+                android:text="@{movieData.prdtYear}"
+                tools:text="2018년 4월"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
