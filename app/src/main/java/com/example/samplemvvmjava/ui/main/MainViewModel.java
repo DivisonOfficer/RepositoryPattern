@@ -10,8 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import dagger.hilt.android.scopes.ActivityRetainedScoped;
+import dagger.hilt.android.scopes.ActivityScoped;
+import dagger.hilt.android.scopes.ViewScoped;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.Disposable;
 

@@ -28,7 +28,13 @@ public class Module {
 
     @Provides
     public Retrofit provideRetrofit(OkHttpClient okHttpClient) {
-        return new Retrofit.Builder().client(okHttpClient).baseUrl(BASE_URL).addCallAdapterFactory(RxJava3CallAdapterFactory.create()).addConverterFactory(GsonConverterFactory.create(new Gson())).build();
+        return new Retrofit
+                .Builder()
+                .client(okHttpClient)
+                .baseUrl(BASE_URL)
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(new Gson()))
+                .build();
     }
 
     @Provides

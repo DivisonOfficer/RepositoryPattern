@@ -22,6 +22,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder> {
 
     void setMovieList(List<MovieData> list){
         movieList = list;
+
         notifyDataSetChanged();
     }
 
@@ -29,7 +30,14 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder> {
     @NonNull
     @Override
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MovieViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.view_holder_movie, parent, false));
+        return new MovieViewHolder(
+                DataBindingUtil.inflate(
+                        LayoutInflater.from(parent.getContext()),
+                        R.layout.view_holder_movie,
+                        parent,
+                        false
+                )
+        );
     }
 
     @Override
