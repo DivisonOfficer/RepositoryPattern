@@ -24,7 +24,11 @@ To use this project, follow these steps:
 ## Run the app
 The app will display a list of movies fetched from a remote API
 Architecture
-The project uses the MVVM pattern and Repository pattern. The data flow in the project is unidirectional, from the View (DataBinding) to the ViewModel to the Storage to the Repository to the RemoteSource (Retrofit). If the ViewModel needs access to a method of the Activity class, it can get that feature from the Connect class, which is a constructor property of the ViewModel. The Activity registers itself in the Connect class when onResume is called. Every Activity is extended by BaseActivity, which has the DataBinding.setContent implementation, launch Activity, and Activity register method for singleton classes on onResume. The Storage class, Connect class, and Repository class are singletons, while the ViewModel is an activity-retained scoped instance. The MainActivity extends BaseActivity and has the MainViewModel as a property. The MainViewModel has the MovieStorage and ActivityConnect as properties. The MovieStorage has the MovieRepository as a property, while the MovieRepository has the RemoteSource created by Retrofit as a property.
+The project uses the MVVM pattern and Repository pattern. The data flow in the project is unidirectional, from the View (DataBinding) to the ViewModel to the Storage to the Repository to the RemoteSource (Retrofit). 
+If the ViewModel needs access to a method of the Activity class, it can get that feature from the Connect class, which is a constructor property of the ViewModel. 
+The Activity registers itself in the Connect class when onResume is called. Every Activity is extended by BaseActivity, which has the DataBinding.setContent implementation, launch Activity, and Activity register method for singleton classes on onResume. 
+The Storage class, Connect class, and Repository class are singletons, while the ViewModel is an activity-retained scoped instance. The MainActivity extends BaseActivity and has the MainViewModel as a property. 
+The MainViewModel has the MovieStorage and ActivityConnect as properties. The MovieStorage has the MovieRepository as a property, while the MovieRepository has the RemoteSource created by Retrofit as a property.
 
 ## Technologies Used
 The project uses the following technologies:
