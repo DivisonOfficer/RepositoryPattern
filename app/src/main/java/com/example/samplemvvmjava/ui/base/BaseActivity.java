@@ -1,5 +1,6 @@
 package com.example.samplemvvmjava.ui.base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 
@@ -9,6 +10,8 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStoreOwner;
+
+import javax.inject.Inject;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -29,7 +32,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         onActivityStart();
     }
 
+    @Inject public ActivityConnect connect;
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        connect.registerActivity(this);
+    }
 
     public <T extends BaseViewModel> T injectViewModel(Class<T> tClass){
         ViewModelProvider.AndroidViewModelFactory factory =
@@ -42,5 +51,10 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 액티비티 시작에서 호출되는 함수
      */
     public abstract void onActivityStart();
+
+
+    public <T extends BaseActivity> void startActivity(Class<T> tClass){
+        startActivity(new Intent(this,tClass));
+    }
 
 }
