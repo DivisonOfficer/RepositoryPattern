@@ -38,10 +38,13 @@ The project uses the MVVM pattern and Repository pattern. The data flow in the p
 ## Technologies Used
 
 The project uses the following technologies:
-
-- **Language:** Java
-- **Framework:** Android
-- **Version:** Android API 30
+<p>
+    <img src="https://img.shields.io/badge/Java-1.8-blue">
+    <img src="https://img.shields.io/badge/Android-SDK%2030-green">
+    <img src="https://img.shields.io/badge/Hilt-2.4.4-yellow">
+    <img src="https://img.shields.io/badge/RxJava-3.1.6-orange">
+    <img src="https://img.shields.io/badge/Retrofit2-2.9.0-red">
+  </p>
 
 The project also uses the following libraries:
 
